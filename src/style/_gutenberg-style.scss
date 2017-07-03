@@ -1,0 +1,96 @@
+/* Gutenberg defaults
+   ========================================================================== */
+
+// Maximum width of the article (Mobile)
+article, body > footer {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.toggleWrapper {
+	@if $edit-mode == true {
+		display: block;
+	} @else if $edit-mode == false {
+		display: none;
+	}
+	position: fixed;
+	top: #{$leading + 'px'};
+	right: #{$leading + 'px'};
+	background-color: #231F20;
+	border-radius: 25px;
+	padding: 0 10px 0 20px;
+	height: 32px;
+}
+
+.btnToggleGrid {
+	background: url('../../assets/images/grid-icons.png') top right no-repeat;
+	background-size: 32px;
+	display: block;
+	font-size: 14px;
+	text-decoration: none;
+	padding-right: 35px;
+	height: 32px;
+	line-height: 34px;
+	font-family: $custom-font-headings;
+	text-transform: uppercase;
+	font-weight: 700;
+	color: white;
+
+	&:hover {
+		color: white;
+	}
+
+	&:active {
+		color: red;
+	}
+}
+
+.double-grid {
+	background-position-y: -32px;
+}
+
+.grid-off {
+	background-position-y: -64px;
+}
+
+// Text Alignment
+.alignLeft {
+	text-align: left;
+}
+
+.alignCenter {
+	text-align: center;
+}
+
+.alignRight {
+	text-align: right;
+}
+
+// Fix letter spacing for uppercase
+.uppercase {
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+/* Your styles come here
+   ========================================================================== */
+
+hgroup h6 {
+	font-family: "ff-meta-serif-web-pro", Georgia, serif;
+}
+
+.sc {
+	font-family: "ff-meta-serif-sc-web-pro", Georgia, serif;
+  	letter-spacing: 0.15em;
+  	text-transform: lowercase;
+}
+
+h2 + h5 {
+	@include margin-top(0.5);
+}
+
+h1 + figure img {
+	@include margin-top(-0.5);
+	@include margin-bottom(0.9);
+}
+
